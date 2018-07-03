@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baseWeb.mapper.impl">
+	<resultMap id="BaseResultMap" type="com.baseWeb.entity.goods.GoodsAttrEntity">
+		<id column="goods_id" property="goodsId" jdbcType="BIGINT" />
+		 <result column="market_price" property="marketPrice" jdbcType="DECIMAL" />
+	    <result column="pdfId" property="pdfId" jdbcType="BIGINT" />
+	    <result column="promotion_stock" property="promotionStock" jdbcType="INTEGER" />
+	    <result column="gift_quantity" property="giftCount" jdbcType="DECIMAL" />
+	    <result column="promotion_type" property="promotionType" jdbcType="VARCHAR" />
+	    <result column="promotion_money" property="promotionMoney" jdbcType="DECIMAL" />
+	    <result column="promotion_rate" property="promotionRate" jdbcType="DECIMAL" />
+	    <result column="promotion_price" property="promotionPrice" jdbcType="DECIMAL" />
+		<result column="category_id" property="categoryId" jdbcType="SMALLINT" />
+		<result column="axis" property="axis" jdbcType="VARCHAR" />
+		<result column="promotion_dtl_id" property="promotionDtlId" jdbcType="BIGINT" />
+		<result column="promotion_id" property="promotionId" jdbcType="BIGINT" />
+		<result column="manu_id" property="manuId" jdbcType="BIGINT" />
+		<result column="shop_id" property="shopId" jdbcType="BIGINT" />
+		<result column="brand_id" property="brandId" jdbcType="BIGINT" />
+		<result column="goodsdef_id" property="goodsdefId" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="overview" property="overview" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="spec" property="spec" jdbcType="VARCHAR" />
+		<result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+		<result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
+		<result column="view_num" property="viewNum" jdbcType="INTEGER" />
+		<result column="source" property="source" jdbcType="INTEGER" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="m_unit" property="mUnit" jdbcType="INTEGER" />
+		<result column="orig_num" property="origNum" jdbcType="INTEGER" />
+		<result column="curr_num" property="currNum" jdbcType="INTEGER" />
+		<result column="c_unit" property="cUnit" jdbcType="INTEGER" />
+		<result column="market_price" property="marketPrice" jdbcType="DECIMAL" />
+		<result column="bo_id" property="boId" jdbcType="BIGINT" />
+		<result column="ctime" property="ctime" jdbcType="TIMESTAMP" />
+		<result column="on_time" property="onTime" jdbcType="TIMESTAMP" />
+		<result column="off_time" property="offTime" jdbcType="TIMESTAMP" />
+		<result column="dtime" property="dtime" jdbcType="TIMESTAMP" />
+		<result column="vno" property="vno" jdbcType="TIMESTAMP" />
+		<result column="is_current" property="isCurrent" jdbcType="INTEGER" />
+		<result column="is_del" property="isDel" jdbcType="INTEGER" />
+		<result column="std_pack" property="stdPack" jdbcType="VARCHAR" />
+		<result column="goods_cls_id" property="goodsclsId" jdbcType="INTEGER" />
+		<result column="goods_cls_code" property="goodsclsCode"
+			jdbcType="VARCHAR" />
+		<result column="goods_cls_name" property="goodsclsName"
+			jdbcType="VARCHAR" />
+		<result column="commodity_name" property="commodityName"
+			jdbcType="VARCHAR" />
+		<result column="good_rate" property="goodRate" jdbcType="DECIMAL" />
+		<result column="comp_star" property="compStar" jdbcType="INTEGER" />
+		<result column="is_oa" property="isoa" jdbcType="TINYINT" />
+		<result column="std_pack_oa" property="stdpackoa" jdbcType="VARCHAR" />
+		<result column="unit_oa" property="unitoa" jdbcType="VARCHAR" />
+		<result column="is_show_price" property="isShowPrice" jdbcType="INTEGER" />
+		<result column="dtj" property="dtj" jdbcType="TINYINT" />
+		<result column="dsj" property="dsj" jdbcType="TINYINT" />
+		<result column="qzxj" property="qzxj" jdbcType="TINYINT" />
+		<result column="ysj" property="ysj" jdbcType="TINYINT" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="shop_type" property="shopType" jdbcType="VARCHAR" />
+		<result column="is_dealership" property="isDealership" jdbcType="TINYINT" />
+		<result column="type" property="type"/>
+		<result column="page" property="page"/>
+		<result column="shop_freight_template_id" property="shopFreightTemplateId"/>
+		<result column="area_name" property="areaName"/>
+		<result column="addr" property="addr"/>
+		<result column="shop_name" property="shopName"/>
+		<result column="is_margin" property="isMargin"/>
+		<result column="margin_status" property="marginStatus"/>
+		<result column="margin_money" property="marginMoney"/>
+		<result column="spec_status" property="specStatus" jdbcType="INTEGER" />
+		<result column="orig_quantity" property="origQuantity" jdbcType="DECIMAL" />
+		<result column="curr_quantity" property="currQuantity" jdbcType="DECIMAL" />
+		<result column="is_public_display_price" property="isPublicDisplayPrice" jdbcType="INTEGER" />
+		<result column="value" property="goodsDigit"/>
+		<result column="active_state" property="activeState"/>
+		<result column="goods_selled" property="goodsSelled"/>
+		<result column="last_update_date" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+		<result column="is_optimization" property="isOptimization" jdbcType="INTEGER" />
+		<result column="optimization_type" property="optimizationType" jdbcType="INTEGER" />
+		<result column="cash_code" property="cashCode" jdbcType="VARCHAR" />
+		
+		<result column="goods_group_id" property="goodsGroupId" jdbcType="BIGINT" />
+		<result column="goods_group_name" property="goodsGroupName" jdbcType="VARCHAR" />
+		<result column="goods_group_sort" property="goodsGroupSort" jdbcType="INTEGER" />
+		<result column="is_group_main_goods" property="isGroupMainGoods" jdbcType="INTEGER" />
+		<result column="is_group" property="isGroup" jdbcType="INTEGER" />
+	</resultMap>
+
+	<resultMap type="com.baseWeb.entity.goods.GoodsIndexVo" id="IndexGoodsVoMap">
+		<result column="goods_id" property="goodsId" />
+		<result column="shop_id" property="shopId" />
+		<result column="is_oa" property="isoa" />
+		<result column="goods_name" property="goodsName" />
+		<result column="goods_url" property="goodsUrl" />
+		<result column="market_price" property="marketPrice" />
+		<result column="promotion_price" property="promotionPrice" />
+		<result column="shop_name" property="shopName" />
+		<result column="promotion_money" property="promotionMoney" />
+		<result column="promotion_rate" property="promotionRate" />
+		<result column="buy_count" property="buyCount" />
+		<result column="gift_count" property="giftCount" />
+		<result column="is_optimization" property="isOptimization" jdbcType="INTEGER" />
+		<result column="ctime" property="ctime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+	goods_id, category_id, axis, manu_id, shop_id,promotion_id,is_optimization,
+	brand_id,is_dealership,shop_freight_template_id,
+	goodsdef_id, name,overview,shop_type,
+	status,
+	code, spec, pic_url, video_url,
+	view_num, source, description, m_unit,
+	orig_num,
+	curr_num, c_unit,
+	market_price, bo_id, ctime, on_time, off_time, dtime, vno,
+	is_current,orig_quantity,curr_quantity,is_public_display_price,
+	is_del,std_pack,goods_cls_id,goods_cls_code,goods_cls_name,commodity_name,good_rate,comp_star,
+	is_oa,std_pack_oa,unit_oa,is_show_price,remarks,is_margin,margin_status,margin_money,last_update_date,optimization_type,cash_code,
+	goods_group_id,goods_group_name,goods_group_sort,is_group_main_goods,is_group
+	</sql>
+	<select id="selectByPK" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from nxsc_goods
+		where goods_id = #{goodsId,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from
+		nxsc_goods
+		where goods_id = #{goodsId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.baseWeb.entity.goods.GoodsEntity">
+		insert into nxsc_goods
+		(goods_id, category_id, axis,
+		manu_id, shop_id,promotion_id,
+		brand_id,
+		goodsdef_id,
+		name,overview, status,
+		code, spec, pic_url,
+		video_url,view_num, source,
+		description,
+		m_unit,
+		orig_num, curr_num, c_unit,
+		market_price, bo_id,
+		ctime,
+		on_time,
+		off_time, dtime,
+		vno, is_current, is_del,std_pack, goods_cls_id,
+		goods_cls_code,goods_cls_name,commodity_name,good_rate,comp_star,is_oa,std_pack_oa,unit_oa,is_show_price,remarks,shop_type,
+		is_dealership
+		)
+		values
+		(#{goodsId,jdbcType=BIGINT}, #{categoryId,jdbcType=SMALLINT},
+		#{axis,jdbcType=VARCHAR},
+		#{manuId,jdbcType=BIGINT},
+		#{shopId,jdbcType=BIGINT},#{promotionId,jdbcType=BIGINT}, #{brandId,jdbcType=BIGINT},
+		#{goodsdefId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR},#{overview,jdbcType=VARCHAR},
+		#{status,jdbcType=INTEGER},
+		#{code,jdbcType=VARCHAR},
+		#{spec,jdbcType=VARCHAR},
+		#{picUrl,jdbcType=VARCHAR},
+		#{videoUrl,jdbcType=VARCHAR},
+		#{viewNum,jdbcType=INTEGER}, #{source,jdbcType=INTEGER},
+		#{description,jdbcType=VARCHAR},
+		#{mUnit,jdbcType=INTEGER},
+		#{origNum,jdbcType=INTEGER},
+		#{currNum,jdbcType=INTEGER}, #{cUnit,jdbcType=INTEGER},
+		#{marketPrice,jdbcType=DECIMAL}, #{boId,jdbcType=BIGINT},
+		#{ctime,jdbcType=TIMESTAMP},
+		#{onTime,jdbcType=TIMESTAMP},
+		#{offTime,jdbcType=TIMESTAMP}, #{dtime,jdbcType=TIMESTAMP},
+		#{vno,jdbcType=TIMESTAMP}, #{isCurrent,jdbcType=INTEGER},
+		#{isDel,jdbcType=INTEGER},
+		#{stdPack,jdbcType=VARCHAR},#{goodsclsId,jdbcType=INTEGER},
+		#{goodsclsCode,jdbcType=VARCHAR},#{goodsclsName,jdbcType=VARCHAR},
+		#{commodityName,jdbcType=VARCHAR},
+		#{goodRate,jdbcType=DECIMAL},
+		#{compStar,jdbcType=INTEGER},
+		#{isoa,jdbcType=TINYINT},
+		#{stdpackoa,jdbcType=VARCHAR},
+		#{unitoa,jdbcType=VARCHAR},
+		#{isShowPrice,jdbcType=INTEGER},
+		#{remarks,jdbcType=VARCHAR},#{shopType}
+		#{isDealership}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.baseWeb.entity.goods.GoodsEntity"
+		useGeneratedKeys="true" keyProperty="goodsId">
+		insert ignore into nxsc_goods
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="goodsId != null">
+				goods_id,
+			</if>
+			<if test="shopFreightTemplateId != null">
+				shop_freight_template_id,
+			</if>
+			<if test="categoryId != null">
+				category_id,
+			</if>
+			<if test="axis != null">
+				axis,
+			</if>
+			<if test="manuId != null">
+				manu_id,
+			</if>
+			<if test="shopId != null">
+				shop_id,
+			</if>
+			<if test="promotionId != null">
+				promotion_id,
+			</if>
+			<if test="brandId != null">
+				brand_id,
+			</if>
+			<if test="goodsdefId != null">
+				goodsdef_id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="overview != null" >
+				overview,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="code != null">
+				code,
+			</if>
+			<if test="spec != null">
+				spec,
+			</if>
+			<if test="picUrl != null">
+				pic_url,
+			</if>
+			<if test="videoUrl != null">
+				video_url,
+			</if>
+			<if test="viewNum != null">
+				view_num,
+			</if>
+			<if test="source != null">
+				source,
+			</if>
+			<if test="description != null">
+				description,
+			</if>
+			<if test="mUnit != null">
+				m_unit,
+			</if>
+			<if test="origNum != null">
+				orig_num,
+			</if>
+			<if test="currNum != null">
+				curr_num,
+			</if>
+			<if test="cUnit != null">
+				c_unit,
+			</if>
+			<if test="marketPrice != null">
+				market_price,
+			</if>
+			<if test="boId != null">
+				bo_id,
+			</if>
+			<if test="ctime != null">
+				ctime,
+			</if>
+			<if test="onTime != null">
+				on_time,
+			</if>
+			<if test="offTime != null">
+				off_time,
+			</if>
+			<if test="dtime != null">
+				dtime,
+			</if>
+			<if test="vno != null">
+				vno,
+			</if>
+			<if test="isCurrent != null">
+				is_current,
+			</if>
+			<if test="isDel != null">
+				is_del,
+			</if>
+			<if test="stdPack != null">
+				std_pack,
+			</if>
+			<if test="goodsclsId != null">
+				goods_cls_id,
+			</if>
+			<if test="goodsclsCode != null">
+				goods_cls_code,
+			</if>
+			<if test="goodsclsName != null">
+				goods_cls_name,
+			</if>
+			<if test="commodityName != null">
+				commodity_name,
+			</if>
+			<if test="goodRate != null">
+				good_rate,
+			</if>
+			<if test="compStar != null">
+				comp_star,
+			</if>
+			<if test="isoa != null">
+				is_oa,
+			</if>
+			<if test="stdpackoa != null">
+				std_pack_oa,
+			</if>
+			<if test="unitoa != null">
+				unit_oa,
+			</if>
+			<if test="isShowPrice != null">
+				is_show_price,
+			</if>
+			<if test="remarks != null">
+				remarks,
+			</if>
+			<if test="shopType != null">
+				shop_type,
+			</if>
+			<if test="isDealership != null">
+				is_dealership,
+			</if>
+			<if test="origQuantity != null">
+				orig_quantity,
+			</if>
+			<if test="currQuantity != null">
+				curr_quantity,
+			</if>
+			<if test="isPublicDisplayPrice != null">
+				is_public_display_price,
+			</if>
+			<if test="goodsClsFullName != null">
+				goods_cls_full_name,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="goodsId != null">
+				#{goodsId,jdbcType=BIGINT},
+			</if>
+			<if test="shopFreightTemplateId != null">
+				#{shopFreightTemplateId},
+			</if>
+			<if test="categoryId != null">
+				#{categoryId,jdbcType=SMALLINT},
+			</if>
+			<if test="axis != null">
+				#{axis,jdbcType=VARCHAR},
+			</if>
+			<if test="manuId != null">
+				#{manuId,jdbcType=BIGINT},
+			</if>
+			<if test="shopId != null">
+				#{shopId,jdbcType=BIGINT},
+			</if>
+			<if test="promotionId != null">
+				#{promotionId,jdbcType=BIGINT},
+			</if>
+			<if test="brandId != null">
+				#{brandId,jdbcType=BIGINT},
+			</if>
+			<if test="goodsdefId != null">
+				#{goodsdefId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="overview != null" >
+				#{overview,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="code != null">
+				#{code,jdbcType=VARCHAR},
+			</if>
+			<if test="spec != null">
+				#{spec,jdbcType=VARCHAR},
+			</if>
+			<if test="picUrl != null">
+				#{picUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="videoUrl != null">
+				#{videoUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="viewNum != null">
+				#{viewNum,jdbcType=INTEGER},
+			</if>
+			<if test="source != null">
+				#{source,jdbcType=INTEGER},
+			</if>
+			<if test="description != null">
+				#{description,jdbcType=VARCHAR},
+			</if>
+			<if test="mUnit != null">
+				#{mUnit,jdbcType=INTEGER},
+			</if>
+			<if test="origNum != null">
+				#{origNum,jdbcType=INTEGER},
+			</if>
+			<if test="currNum != null">
+				#{currNum,jdbcType=INTEGER},
+			</if>
+			<if test="cUnit != null">
+				#{cUnit,jdbcType=INTEGER},
+			</if>
+			<if test="marketPrice != null">
+				#{marketPrice,jdbcType=DECIMAL},
+			</if>
+			<if test="boId != null">
+				#{boId,jdbcType=BIGINT},
+			</if>
+			<if test="ctime != null">
+				#{ctime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="onTime != null">
+				#{onTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="offTime != null">
+				#{offTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="dtime != null">
+				#{dtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="vno != null">
+				#{vno,jdbcType=TIMESTAMP},
+			</if>
+			<if test="isCurrent != null">
+				#{isCurrent,jdbcType=INTEGER},
+			</if>
+			<if test="isDel != null">
+				#{isDel,jdbcType=INTEGER},
+			</if>
+			<if test="stdPack != null">
+				#{stdPack,jdbcType=INTEGER},
+			</if>
+			<if test="goodsclsId != null">
+				#{goodsclsId,jdbcType=INTEGER},
+			</if>
+			<if test="goodsclsCode != null">
+				#{goodsclsCode,jdbcType=VARCHAR},
+			</if>
+			<if test="goodsclsName != null">
+				#{goodsclsName,jdbcType=VARCHAR},
+			</if>
+			<if test="commodityName != null">
+				#{commodityName,jdbcType=VARCHAR},
+			</if>
+			<if test="goodRate != null">
+				#{goodRate,jdbcType=DECIMAL},
+			</if>
+			<if test="compStar != null">
+				#{compStar,jdbcType=INTEGER},
+			</if>
+			<if test="isoa != null">
+				#{isoa,jdbcType=TINYINT},
+			</if>
+			<if test="stdpackoa != null">
+				#{stdpackoa,jdbcType=VARCHAR},
+			</if>
+			<if test="unitoa != null">
+				#{unitoa,jdbcType=VARCHAR},
+			</if>
+			<if test="isShowPrice != null">
+				#{isShowPrice,jdbcType=INTEGER},
+			</if>
+			<if test="remarks != null">
+				#{remarks,jdbcType=VARCHAR},
+			</if>
+			<if test="shopType != null">
+				#{shopType},
+			</if>
+			<if test="isDealership != null ">
+				#{isDealership},
+			</if>
+			<if test="origQuantity != null ">
+				#{origQuantity,jdbcType=DECIMAL},
+			</if>
+			<if test="currQuantity != null ">
+				#{currQuantity,jdbcType=DECIMAL},
+			</if>
+			<if test="isPublicDisplayPrice != null "> 
+				#{isPublicDisplayPrice,jdbcType=INTEGER},
+			</if>
+			<if test="goodsClsFullName != null ">
+				#{goodsClsFullName,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.baseWeb.entity.goods.GoodsEntity">
+		update nxsc_goods
+		<set>
+			<if test="shopFreightTemplateId != null">
+				<if test="shopFreightTemplateId == -1">
+					shop_freight_template_id = null,
+				</if>
+				<if test="shopFreightTemplateId != -1">
+					shop_freight_template_id = #{shopFreightTemplateId},
+				</if>
+			</if>
+			<if test="categoryId != null">
+				category_id = #{categoryId,jdbcType=SMALLINT},
+			</if>
+			<if test="axis != null">
+				axis = #{axis,jdbcType=VARCHAR},
+			</if>
+			<if test="manuId != null">
+				manu_id = #{manuId,jdbcType=BIGINT},
+			</if>
+			<if test="shopId != null">
+				shop_id = #{shopId,jdbcType=BIGINT},
+			</if>
+			<if test="promotionId != null">
+				promotion_id = #{promotionId,jdbcType=BIGINT},
+			</if>
+			<if test="brandId != null">
+				brand_id = #{brandId,jdbcType=BIGINT},
+			</if>
+			<if test="goodsdefId != null">
+				goodsdef_id = #{goodsdefId,jdbcType=BIGINT},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="overview != null" >
+				overview = #{overview,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=INTEGER},
+			</if>
+			<if test="code != null">
+				code = #{code,jdbcType=VARCHAR},
+			</if>
+			<if test="spec != null">
+				spec = #{spec,jdbcType=VARCHAR},
+			</if>
+			<if test="picUrl != null">
+				pic_url = #{picUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="videoUrl != null">
+				video_url = #{videoUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="viewNum != null">
+				view_num = #{viewNum,jdbcType=INTEGER},
+			</if>
+			<if test="source != null">
+				source = #{source,jdbcType=INTEGER},
+			</if>
+			<if test="description != null">
+				description = #{description,jdbcType=VARCHAR},
+			</if>
+			<if test="mUnit != null">
+				m_unit = #{mUnit,jdbcType=INTEGER},
+			</if>
+			<if test="origNum != null">
+				orig_num = #{origNum,jdbcType=INTEGER},
+			</if>
+			<if test="currNum != null">
+				curr_num = #{currNum,jdbcType=INTEGER},
+			</if>
+			<if test="cUnit != null">
+				c_unit = #{cUnit,jdbcType=INTEGER},
+			</if>
+			<if test="marketPrice != null">
+				market_price = #{marketPrice,jdbcType=DECIMAL},
+			</if>
+			<if test="boId != null">
+				bo_id = #{boId,jdbcType=BIGINT},
+			</if>
+			<if test="ctime != null">
+				ctime = #{ctime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="onTime != null">
+				on_time = #{onTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="offTime != null">
+				off_time = #{offTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="dtime != null">
+				dtime = #{dtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="vno != null">
+				vno = #{vno,jdbcType=TIMESTAMP},
+			</if>
+			<if test="isCurrent != null">
+				is_current = #{isCurrent,jdbcType=INTEGER},
+			</if>
+			<if test="isDel != null">
+				is_del = #{isDel,jdbcType=INTEGER},
+			</if>
+			<if test="stdPack != null">
+				std_pack = #{stdPack,jdbcType=INTEGER},
+			</if>
+			<if test="goodsclsId != null">
+				goods_cls_id = #{goodsclsId,jdbcType=INTEGER},
+			</if>
+			<if test="goodsclsCode != null">
+				goods_cls_code = #{goodsclsCode,jdbcType=VARCHAR},
+			</if>
+			<if test="goodsclsName != null">
+				goods_cls_name = #{goodsclsName,jdbcType=VARCHAR},
+			</if>
+			<if test="commodityName != null">
+				commodity_name = #{commodityName,jdbcType=VARCHAR},
+			</if>
+			<if test="goodRate != null">
+				good_rate = #{goodRate,jdbcType=DECIMAL},
+			</if>
+			<if test="compStar != null">
+				comp_star = #{compStar,jdbcType=INTEGER},
+			</if>
+			<if test="isoa != null">
+				is_oa = #{isoa,jdbcType=TINYINT},
+			</if>
+			<if test="stdpackoa != null">
+				std_pack_oa = #{stdpackoa,jdbcType=VARCHAR},
+			</if>
+			<if test="unitoa != null">
+				unit_oa = #{unitoa,jdbcType=VARCHAR},
+			</if>
+			<if test="isShowPrice != null">
+				is_show_price = #{isShowPrice,jdbcType=INTEGER},
+			</if>
+			<if test="remarks != null">
+				remarks = #{remarks,jdbcType=VARCHAR},
+			</if>
+			<if test="shopType != null">
+				shop_type = #{shopType},
+			</if>
+			<if test="isDealership != null">
+				is_dealership = #{isDealership},
+			</if>
+			<if test="isMargin != null">
+				is_margin = #{isMargin},
+			</if>
+			<if test="marginStatus != null">
+				margin_status = #{marginStatus},
+			</if>
+			<if test="marginMoney != null">
+				margin_money = #{marginMoney},
+			</if>
+			<if test="origQuantity != null ">
+				orig_quantity = #{origQuantity,jdbcType=DECIMAL},
+			</if>
+			<if test="currQuantity != null ">
+				curr_quantity = #{currQuantity,jdbcType=DECIMAL},
+			</if>
+			<if test="isPublicDisplayPrice != null ">
+				is_public_display_price = #{isPublicDisplayPrice,jdbcType=INTEGER},
+			</if>
+			<if test="goodsClsFullName != null ">
+				goods_cls_full_name = #{goodsClsFullName,jdbcType=VARCHAR},
+			</if>
+			<if test="optimizationType != null ">
+				optimization_type = #{optimizationType,jdbcType=INTEGER},
+			</if>
+		</set>
+		where goods_id = #{goodsId,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.baseWeb.entity.goods.GoodsEntity">
+		update
+		nxsc_goods
+		set category_id = #{categoryId,jdbcType=SMALLINT},
+		axis =
+		#{axis,jdbcType=VARCHAR},
+		manu_id = #{manuId,jdbcType=BIGINT},
+		shop_id =
+		#{shopId,jdbcType=BIGINT},
+		promotion_id =
+		#{promotionId,jdbcType=BIGINT},
+		brand_id = #{brandId,jdbcType=BIGINT},
+		goodsdef_id = #{goodsdefId,jdbcType=BIGINT},
+		name =
+		#{name,jdbcType=VARCHAR},
+		 overview = #{overview,jdbcType=VARCHAR},
+		status = #{status,jdbcType=INTEGER},
+		code =
+		#{code,jdbcType=VARCHAR},
+		spec =
+		#{spec,jdbcType=VARCHAR},
+		pic_url =
+		#{picUrl,jdbcType=VARCHAR},
+		video_url =
+		#{videoUrl,jdbcType=VARCHAR},
+		view_num = #{viewNum,jdbcType=INTEGER},
+		source =
+		#{source,jdbcType=INTEGER},
+		description =
+		#{description,jdbcType=VARCHAR},
+		m_unit = #{mUnit,jdbcType=INTEGER},
+		orig_num = #{origNum,jdbcType=INTEGER},
+		curr_num =
+		#{currNum,jdbcType=INTEGER},
+		c_unit = #{cUnit,jdbcType=INTEGER},
+		market_price = #{marketPrice,jdbcType=DECIMAL},
+		bo_id =
+		#{boId,jdbcType=BIGINT},
+		ctime = #{ctime,jdbcType=TIMESTAMP},
+		on_time =
+		#{onTime,jdbcType=TIMESTAMP},
+		off_time = #{offTime,jdbcType=TIMESTAMP},
+		dtime = #{dtime,jdbcType=TIMESTAMP},
+		vno = #{vno,jdbcType=TIMESTAMP},
+		is_current = #{isCurrent,jdbcType=INTEGER},
+		is_del =
+		#{isDel,jdbcType=INTEGER},
+		std_pack =
+		#{stdPack,jdbcType=INTEGER},
+		goods_cls_id =
+		#{goodsclsId,jdbcType=INTEGER},
+		goods_cls_code =
+		#{goodsclsCode,jdbcType=VARCHAR},
+		goods_cls_name =
+		#{goodsclsName,jdbcType=VARCHAR},
+		commodity_name =
+		#{commodityName,jdbcType=VARCHAR},
+		good_rate =
+		#{goodRate,jdbcType=DECIMAL},
+		comp_star =
+		#{compStar,jdbcType=INTEGER},
+		is_oa =
+		#{isoa,jdbcType=TINYINT},
+		std_pack_oa =
+		#{stdpackoa,jdbcType=VARCHAR},
+		unit_oa =
+		#{unitoa,jdbcType=VARCHAR},
+		is_show_price =
+		#{isShowPrice,jdbcType=VARCHAR},
+		remarks =
+		#{remarks,jdbcType=VARCHAR},
+		orig_quantity=
+		#{origQuantity,jdbcType=DECIMAL},
+		curr_quantity =
+		#{currQuantity,jdbcType=DECIMAL},
+		optimization_type=#{optimizationType,jdbcType=INTEGER},
+		where goods_id = #{goodsId,jdbcType=BIGINT}
+	</update>
+
+</mapper>

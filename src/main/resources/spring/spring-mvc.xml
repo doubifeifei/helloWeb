@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+	<!-- 1、包扫描 避免重复生成-->
+	<context:component-scan base-package="com.baseWeb"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+	<!--使用fastjson作为json解析器-->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes" value="application/json"/>
+				<property name="features">
+					<array>
+						<value>WriteMapNullValue</value>
+						<value>WriteDateUseDateFormat</value>
+					</array>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<!-- 2、视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/"></property>
+		<property name="suffix" value=".html"></property>
+	</bean>
+
+	<!-- 3、SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 指定所上传文件的总大小,单位字节。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<property name="maxUploadSize" value="10240000" />
+	</bean>
+
+	<!-- 4、启动注解 -->
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
+	<mvc:resources mapping="baseWeb/js/**" location="/js/" cache-period="31556926"/>
+
+</beans>
